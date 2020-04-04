@@ -1,3 +1,12 @@
+"""
+This file contains arrays that contain similar of file types. 
+Each array is used to find the correct path of where files should go.
+
+"""
+__author__ = "Andrew Delgado"
+__version__ = 1.0
+__status__ = "Prototype"
+
 audioVideo = ['mp3','mp4']
 code = ['txt','class']
 image_files = ['jpeg','jpg','png','gif','tiff','ai','raw','svg']
