@@ -1,46 +1,31 @@
+import func
 import os
+import time
+# C:\\Users\\Andrew\\Downloads
+source = 'C:\\Users\\Andrew\\Desktop\\Desktop'
 
-source = 'C:\\Users\\Andrew\\Downloads'
+if __name__ == "__main__":
 
-listOfFiles = os.listdir(source)
-print(f"Original number of files: {len(listOfFiles)}")
+    try:
+        while True:
+            listOfFiles = os.listdir(source)
 
-for file in listOfFiles:
-    source = 'C:\\Users\\Andrew\\Downloads'
-    destination = 'C:\\Users\\Andrew\\Documents\\UnsortedFiles\\UnsortedImages'
+            if len(listOfFiles) > 0:
+                print(f"Original number of files: {len(listOfFiles)}")
+                for file in listOfFiles:
+                    source = 'C:\\Users\\Andrew\\Desktop\\Desktop'
+                    destination = func.getDestDir(file)
 
-    if file.__contains__('.jpg'):
-        src = source + '\\' + file
-        destination = destination + '\\' + file
+                    src = source + '\\' + file
+                    dest = destination + '\\' + file
 
-        os.rename(src, destination)
+                    os.rename(src, dest)
 
-        print(f"Moved file: {file}")
+                    print(f"Moved file: {file}")
 
+                print(f"\nNumber of files moved: {len(listOfFiles) - len(os.listdir(source))}")
 
-print(f"\nNumber of files moved: {len(listOfFiles) - len(os.listdir(source))}")
-
-
-
-
-
-
-
-
-
-
-# print(f"This is a list of: {os.listdir(source)}")
-
-# fileText = listOfFiles[3]
-
-# src = source + '\\' + fileText
-# destination = destination + '\\' + fileText
-
-
-# print(fileText)
-# print(f"source file {src}")
-# print(f"dest file {destination}")
-
-# os.rename(src, destination)
-
-# print(f"\nThis is a list of: {os.listdir(source)}")
+            time.sleep(2)
+    except KeyboardInterrupt:
+        print("Keyboard Interrupt exception caught")
+        SystemExit
