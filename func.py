@@ -43,6 +43,3 @@ if __name__ == "__main__":
     destination = getDestDir('andrewdelgado017@gmail.com.ical')
     print(destination)
 
-    # destination = getDestDir('asdfa.pptx')
-    # print(destination)
-
