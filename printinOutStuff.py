@@ -14,8 +14,8 @@ class MyHandler(FileSystemEventHandler):
             os.rename(src, new_destination)
 
 
-folder_to_track = 'C:\\Users\Andrew\\Desktop'
-folder_destination = 'C:\\Users\\Andrew\\Desktop\\Desktop'
+folder_to_track = 'C:\\Users\Andrew\\Desktop\\Desktop'
+folder_destination = 'C:\\Users\\Andrew\\Desktop\\TestFolder'
 event_handler = MyHandler()
 observer = Observer()
 observer.schedule(event_handler, folder_to_track, recursive=True)
@@ -23,7 +23,7 @@ observer.start()
 
 try:
     while True:
-        time.sleep(10)
+        time.sleep(1)
 except KeyboardInterrupt:
     observer.stop()
-observer.json()
+observer.join()

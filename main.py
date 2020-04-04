@@ -1,8 +1,8 @@
 import func
 import os
 import time
-# C:\\Users\\Andrew\\Downloads
-source = 'C:\\Users\\Andrew\\Desktop\\Desktop'
+
+source = 'C:\\Users\\Andrew\\Downloads'
 
 if __name__ == "__main__":
 
@@ -13,7 +13,7 @@ if __name__ == "__main__":
             if len(listOfFiles) > 0:
                 print(f"Original number of files: {len(listOfFiles)}")
                 for file in listOfFiles:
-                    source = 'C:\\Users\\Andrew\\Desktop\\Desktop'
+                    source = 'C:\\Users\\Andrew\\Downloads'
                     destination = func.getDestDir(file)
 
                     src = source + '\\' + file
