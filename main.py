@@ -18,31 +18,43 @@ import func
 import os
 import time
 
-source = 'C:\\Users\\Andrew\\Downloads'
+source = 'C:\\Users\\Andrew\\Desktop'
+YELLOW = '\033[33m'
+GREEN  = '\033[32m'
+RED    = '\033[31m'
+RESET  = '\033[0m'
+CYAN   = '\033[36m'
 
 if __name__ == "__main__":
 
-    print("Running...")
+    print(GREEN + "Running..." + RESET)
     try:
         while True:
             listOfFiles = os.listdir(source)
 
             if len(listOfFiles) > 0:
-                print(f"Original number of files: {len(listOfFiles)}")
-                for file in listOfFiles:
-                    source = 'C:\\Users\\Andrew\\Downloads'
-                    destination = func.getDestDir(file)
+                if len(listOfFiles) == 1 and listOfFiles[0] == 'desktop.ini':
+                    continue
+                else:
+                    print(f"\nOriginal number of files: {CYAN}{len(listOfFiles)}{CYAN}")
+                    for file in listOfFiles:
 
-                    src = source + '\\' + file
-                    dest = destination + '\\' + file
+                        # if file == 'desktop.ini':
+                        #     continue
 
-                    os.rename(src, dest)
+                        source = 'C:\\Users\\Andrew\\Desktop'
+                        destination = func.getDestDir(file)
 
-                    print(f"Moved file: {file}")
+                        src = source + '\\' + file
+                        dest = destination + '\\' + file
 
-                print(f"\nNumber of files moved: {len(listOfFiles) - len(os.listdir(source))}")
+                        os.rename(src, dest)
 
+                        print(f"{YELLOW}Moved file:{RESET} {file}")
+
+                    print(f"\nNumber of files moved: {CYAN}{len(listOfFiles) - len(os.listdir(source))}{RESET}")
+                    
             time.sleep(2)
     except KeyboardInterrupt:
-        print("...Not Running")
+        print(RED + "...Not Running" + RESET)
         SystemExit
