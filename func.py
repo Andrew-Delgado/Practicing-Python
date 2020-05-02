@@ -25,26 +25,26 @@ def getDestDir(fileType):
     extention = fileType[start:end]
 
     # Checks each array if it contains the file extention.
-    if code.__contains__(extention):
-        return 'C:\\Users\\Andrew\\Documents\\UnsortedFiles\\UnsortedCode'
-    elif image_files.__contains__(extention):
-        return 'C:\\Users\\Andrew\\Documents\\UnsortedFiles\\UnsortedImages'
-    elif installers.__contains__(extention):
-        return 'C:\\Users\\Andrew\\Documents\\UnsortedFiles\\UnsortedInstallers'
-    elif microsoft.__contains__(extention):
-        return 'C:\\Users\\Andrew\\Documents\\UnsortedFiles\\UnsortedMicrosoft'
-    elif pdf.__contains__(extention):
-        return 'C:\\Users\\Andrew\\Documents\\UnsortedFiles\\UnsortedPDF'
-    elif software.__contains__(extention):
-        return 'C:\\Users\\Andrew\\Documents\\UnsortedFiles\\UnsortedSoftware'
-    elif zipped_folders.__contains__(extention):
-        return 'C:\\Users\\Andrew\\Documents\\UnsortedFiles\\UnsortedZip'
-    elif audioVideo.__contains__(extention):
-        return 'C:\\Users\\Andrew\\Documents\\UnsortedFiles\\UnsortedAudioAndVideo'
-    else:
-        return 'C:\\Users\\Andrew\\Documents\\UnsortedFiles\\ZZZ-UnsortedOtherFiles'
+    # if code.__contains__(extention):
+    #     return 'C:\\Users\\Andrew\\Documents\\UnsortedFiles\\UnsortedCode'
+    # elif image_files.__contains__(extention):
+    #     return 'C:\\Users\\Andrew\\Documents\\UnsortedFiles\\UnsortedImages'
+    # elif installers.__contains__(extention):
+    #     return 'C:\\Users\\Andrew\\Documents\\UnsortedFiles\\UnsortedInstallers'
+    # elif microsoft.__contains__(extention):
+    #     return 'C:\\Users\\Andrew\\Documents\\UnsortedFiles\\UnsortedMicrosoft'
+    # elif pdf.__contains__(extention):
+    #     return 'C:\\Users\\Andrew\\Documents\\UnsortedFiles\\UnsortedPDF'
+    # elif software.__contains__(extention):
+    #     return 'C:\\Users\\Andrew\\Documents\\UnsortedFiles\\UnsortedSoftware'
+    # elif zipped_folders.__contains__(extention):
+    #     return 'C:\\Users\\Andrew\\Documents\\UnsortedFiles\\UnsortedZip'
+    # elif audioVideo.__contains__(extention):
+    #     return 'C:\\Users\\Andrew\\Documents\\UnsortedFiles\\UnsortedAudioAndVideo'
+    # else:
+    #     return 'C:\\Users\\Andrew\\Documents\\UnsortedFiles\\ZZZ-UnsortedOtherFiles'
 
-
+    return '/Users/andrewdelgado/Desktop/Test/folder2'
 
 
 # main I used to test this function

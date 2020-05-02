@@ -18,12 +18,21 @@ import func
 import os
 import time
 
-source = 'C:\\Users\\Andrew\\Desktop'
+source = '/Users/andrewdelgado/Desktop/Test/folder1'
 YELLOW = '\033[33m'
 GREEN  = '\033[32m'
 RED    = '\033[31m'
 RESET  = '\033[0m'
 CYAN   = '\033[36m'
+
+def filterList(oldList):
+    listToRemove = list('desktop.ini')
+
+    for e in oldList:
+        if e[0] == '.':
+            listToRemove.append(e)
+
+    return list(filter(lambda i: i not in listToRemove, oldList))
 
 if __name__ == "__main__":
 
@@ -31,28 +40,23 @@ if __name__ == "__main__":
     try:
         while True:
             listOfFiles = os.listdir(source)
+            listOfFiles = filterList(listOfFiles)
 
             if len(listOfFiles) > 0:
-                if len(listOfFiles) == 1 and listOfFiles[0] == 'desktop.ini':
-                    continue
-                else:
-                    print(f"\nOriginal number of files: {CYAN}{len(listOfFiles)}{CYAN}")
-                    for file in listOfFiles:
+                print(f"\nOriginal number of files: {CYAN}{len(listOfFiles)}{CYAN}")
+                for file in listOfFiles:
 
-                        # if file == 'desktop.ini':
-                        #     continue
+                    source = '/Users/andrewdelgado/Desktop/Test/folder1'
+                    destination = func.getDestDir(file)
 
-                        source = 'C:\\Users\\Andrew\\Desktop'
-                        destination = func.getDestDir(file)
+                    src = source + '/' + file
+                    dest = destination + '/' + file
 
-                        src = source + '\\' + file
-                        dest = destination + '\\' + file
+                    os.rename(src, dest)
 
-                        os.rename(src, dest)
+                    print(f"{YELLOW}Moved file:{RESET} {file}")
 
-                        print(f"{YELLOW}Moved file:{RESET} {file}")
-
-                    print(f"\nNumber of files moved: {CYAN}{len(listOfFiles) - len(os.listdir(source))}{RESET}")
+                print(f"\nNumber of files moved: {CYAN}{len(listOfFiles) - len(os.listdir(source))}{RESET}")
                     
             time.sleep(2)
     except KeyboardInterrupt:
